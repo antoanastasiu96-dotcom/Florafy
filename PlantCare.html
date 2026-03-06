@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Florafy – PlantCare</title>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="images/logo.jpg" alt="Florafy Logo">
+        <span class="brand">Florafy</span>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="FirstPage.html">Home</a></li>
+          <li><a href="MyPlants.html">My Plants</a></li>
+          <li><a href="PlantCare.html">PlantCare</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="text">
+        <h1>PlantCare Tips to Keep Your Green Friends Happy 🌿</h1>
+        <p>Discover essential tips to help your plants thrive, from watering routines to light love.</p>
+        <div class="search-container">
+          <input type="text" id="searchInput" class="search-box" placeholder="Search tips..." onkeyup="filterTips()">
+        </div>
+      </div>
+      <div class="image">
+        <img src="images/plant.jpg" alt="Plant Care">
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <div class="favorites-toggle" style="text-align:center; margin: 30px 0;">
+    <button id="toggleFavorites" class="fav-btn">⭐ Show Only Favorites</button>
+  </div>
+    <div class="features-wrapper" id="tipsContainer">
+      
+      <div class="feature-box" data-tip-id="0">
+  <h3>Water Wisely</h3>
+  <p>Check soil moisture before watering. Overwatering is one of the top plant killers!</p>
+  <button class="fav-btn">⭐ Save</button>
+</div>
+
+<div class="feature-box" data-tip-id="1">
+  <h3>Light Matters</h3>
+  <p>Understand your plant's light needs – some love the sun, others thrive in shade.</p>
+  <button class="fav-btn">⭐ Save</button>
+</div>
+
+      <div class="feature-box">
+        <h3>Boost Humidity</h3>
+        <p>Group plants together or mist them regularly if your home is dry.</p>
+          <button class="fav-btn">⭐ Save</button>
+      </div>
+
+      <div class="feature-box">
+        <h3>Repot with Care</h3>
+        <p>Give your plant room to grow by repotting yearly or when roots peek out.</p>
+          <button class="fav-btn">⭐ Save</button>
+      </div>
+
+      <div class="feature-box">
+        <h3>Clean Leaves</h3>
+        <p>Dust blocks light. Gently wipe leaves with a damp cloth every few weeks.</p>
+          <button class="fav-btn">⭐ Save</button>
+      </div>
+
+      <div class="feature-box">
+        <h3>Feed Regularly</h3>
+        <p>Use a gentle fertilizer during growing season for that extra boost.</p>
+          <button class="fav-btn">⭐ Save</button>
+      </div>
+
+      <div class="feature-box">
+        <h3>Cactus Care</h3>
+        <p>Place your cactus in bright light and water sparingly. Let the soil dry completely between waterings.</p>
+          <button class="fav-btn">⭐ Save</button>
+      </div>
+
+      <div class="feature-box">
+        <h3>Rose Routine</h3>
+        <p>Roses need full sun, regular pruning, and deep watering to bloom beautifully and stay healthy.</p>
+          <button class="fav-btn">⭐ Save</button>
+      </div>
+
+      <div class="feature-box">
+        <h3>Fern Focus</h3>
+        <p>Ferns love humidity and indirect light. Keep soil consistently moist but not soggy.</p>
+          <button class="fav-btn">⭐ Save</button>
+      </div>
+
+      <div class="feature-box">
+        <h3>Bonsai Basics</h3>
+        <p>Place in a bright spot, prune regularly, and water when the topsoil feels dry to the touch.</p>
+          <button class="fav-btn">⭐ Save</button>
+      </div>
+
+      <div class="feature-box">
+        <h3>General Greenery</h3>
+        <p>Keep a consistent schedule for watering and feeding. Watch for yellowing leaves and adjust care accordingly.</p>
+          <button class="fav-btn">⭐ Save</button>
+      </div>
+
+      <div class="feature-box">
+        <h3>Bonsai: Seasonal Guide</h3>
+        <p>Protect from frost in winter. Water more in summer, less in cooler months. Provide bright but filtered light.</p>
+          <button class="fav-btn">⭐ Save</button>
+      </div>
+
+      <div class="feature-box">
+        <h3>Rose: Seasonal Guide</h3>
+        <p>Spring and summer are blooming seasons. Water deeply twice a week and ensure 6+ hours of direct sunlight.</p>
+          <button class="fav-btn">⭐ Save</button>
+      </div>
+
+      <div class="feature-box">
+        <h3>Cactus: Seasonal Guide</h3>
+        <p>In summer, water once every 2-3 weeks. In winter, reduce watering to once a month. Needs full sun all year.</p>
+          <button class="fav-btn">⭐ Save</button>
+      </div>
+
+      <div class="feature-box">
+        <h3>Fern: Seasonal Guide</h3>
+        <p>Needs high humidity year-round. Reduce watering slightly in winter, but never let soil fully dry out.</p>
+          <button class="fav-btn">⭐ Save</button>
+      </div>
+
+      <div class="feature-box">
+        <h3>Seasonal Watering</h3>
+        <p>Adjust watering based on the season – less in winter, more in summer, always checking the soil moisture.</p>
+          <button class="fav-btn">⭐ Save</button>
+      </div>
+
+      <div class="feature-box">
+        <h3>Seasonal Light Needs</h3>
+        <p>Plants need more sunlight in winter when days are short. Rotate them toward windows for balanced exposure.</p>
+          <button class="fav-btn">⭐ Save</button>
+      </div>
+
+      <div class="feature-box">
+        <h3>Oxygen & Airflow Tips</h3>
+        <p>Good ventilation helps plants breathe. Keep them spaced out and occasionally open windows for fresh air.</p>
+          <button class="fav-btn">⭐ Save</button>
+      </div>
+    </div>
+  </section>
+  
+
+  <footer class="footer-modern">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <img src="images/logo.jpg" alt="Florafy Logo" class="footer-logo">
+        <h3>Florafy</h3>
+        <p class="tagline">Helping you and your plants grow 🌿</p>
+      </div>
+      <div class="footer-grid">
+        <div>
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="FirstPage.html">Home</a></li>
+            <li><a href="MyPlants.html">My Plants</a></li>
+            <li><a href="PlantCare.html">PlantCare</a></li>
+            <li><a href="PlantCare.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="Contact.html">Help Center</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Florafy • Crafted with care 🌱</p>
+    </div>
+  </footer>
+
+  <script>
+    function filterTips() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const tips = document.querySelectorAll('.feature-box');
+      tips.forEach(tip => {
+        const text = tip.innerText.toLowerCase();
+        tip.classList.toggle('visible', text.includes(input));
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.feature-box').forEach(tip => tip.classList.add('visible'));
+    });
+  </script>
+ <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const tips = document.querySelectorAll(".feature-box");
+    const favorites = JSON.parse(localStorage.getItem("favoriteTips")) || [];
+
+    let showOnlyFavorites = false;
+
+    tips.forEach(tip => tip.classList.add('visible'));
+    tips.forEach((tip, index) => {
+      if (!tip.dataset.tipId) {
+        tip.dataset.tipId = index.toString();
+      }
+
+      const id = tip.dataset.tipId;
+      const button = tip.querySelector(".fav-btn");
+
+      if (favorites.includes(id)) {
+        button.classList.add("saved");
+        button.textContent = "⭐ Saved";
+      }
+
+      button.addEventListener("click", () => {
+        if (favorites.includes(id)) {
+          favorites.splice(favorites.indexOf(id), 1);
+          button.classList.remove("saved");
+          button.textContent = "⭐ Save";
+        } else {
+          favorites.push(id);
+          button.classList.add("saved");
+          button.textContent = "⭐ Saved";
+        }
+        localStorage.setItem("favoriteTips", JSON.stringify(favorites));
+        applyFilters();
+      });
+    });
+
+    document.getElementById("searchInput").addEventListener("input", applyFilters);
+
+    const toggleBtn = document.getElementById("toggleFavorites");
+    toggleBtn.addEventListener("click", () => {
+      showOnlyFavorites = !showOnlyFavorites;
+      toggleBtn.textContent = showOnlyFavorites ? "⭐ Show All Tips" : "⭐ Show Only Favorites";
+      applyFilters();
+    });
+
+    function applyFilters() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      tips.forEach(tip => {
+        const id = tip.dataset.tipId;
+        const matchesSearch = tip.innerText.toLowerCase().includes(search);
+        const isFavorite = favorites.includes(id);
+        const show = matchesSearch && (!showOnlyFavorites || isFavorite);
+        tip.style.display = show ? "block" : "none";
+      });
+    }
+
+    applyFilters();
+  });
+</script>
+
+
+</body>
+</html>

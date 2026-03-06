@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Florafy – My Plant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="images/logo.jpg" alt="Florafy Logo" />
+        <span class="brand">Florafy</span>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="FirstPage.html">Home</a></li>
+          <li><a href="MyPlants.html">My Plants</a></li>
+          <li><a href="PlantCare.html">PlantCare</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="plant-layout">
+    <div class="tips-side">
+      <div class="tip-box">
+        <h4>Watering Tips</h4>
+        <p>Check the soil before watering your plant.</p>
+        <a href="PlantCare.html" class="info-button">More Info</a>
+      </div>
+      <div class="tip-box">
+        <h4>Soil Health</h4>
+        <p>Change the soil every 12-18 months.</p>
+        <a href="PlantCare.html" class="info-button">More Info</a>
+      </div>
+      <div class="tip-box">
+        <h4>Humidity</h4>
+        <p>Mist the leaves or use a humidity tray.</p>
+        <a href="PlantCare.html" class="info-button">More Info</a>
+      </div>
+    </div>
+
+    <div class="plant-center">
+      <div class="plant-selector">
+        <label for="plantType">Choose your plant:</label>
+        <select id="plantType" onchange="selectPlant()">
+          <option value="Cactus">Cactus</option>
+          <option value="Rose">Rose</option>
+          <option value="Fern">Fern</option>
+          <option value="Bonsai">Bonsai</option>
+        </select>
+      </div>
+
+      <div class="plant-container">
+        <img src="images/plant-happy.png" alt="Plant" class="plant-image" id="plantImage">
+        <div class="status-emoji" id="statusEmoji">😊</div>
+
+        <div class="bar-group">
+          <div class="bar-column">
+            <div class="bar-wrapper">
+              <div class="icon">💧</div>
+              <div class="bar"><div class="fill water" id="waterFill"></div></div>
+            </div>
+            <div class="bar-wrapper">
+              <div class="icon">🌾</div>
+              <div class="bar"><div class="fill soil" id="soilFill"></div></div>
+            </div>
+          </div>
+          <div class="bar-column">
+            <div class="bar-wrapper">
+              <div class="bar"><div class="fill light" id="lightFill"></div></div>
+              <div class="icon">☀️</div>
+            </div>
+            <div class="bar-wrapper">
+              <div class="bar"><div class="fill oxygen" id="oxygenFill"></div></div>
+              <div class="icon">☁️</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="warning" id="warningMessage"></div>
+
+        <div class="controls">
+          <button onclick="refill('water')">💧 Water Plant</button>
+          <button onclick="refill('soil')">🌾 Change Soil</button>
+          <button onclick="refill('light')">☀️ Add Light</button>
+          <button onclick="refill('oxygen')">☁️ Provide Oxygen</button>
+        </div>
+      </div>
+    </div>
+
+     
+    <div class="tips-side">
+      <div class="tip-box">
+        <h4>Light Needs</h4>
+        <p>Place your plant near indirect sunlight.</p>
+        <a href="PlantCare.html" class="info-button">More Info</a>
+      </div>
+      <div class="tip-box">
+        <h4>Oxygen</h4>
+        <p>Keep the room ventilated for fresh airflow.</p>
+        <a href="PlantCare.html" class="info-button">More Info</a>
+      </div>
+      <div class="tip-box">
+        <h4>Leaf Cleaning</h4>
+        <p>Gently wipe leaves every 1-2 weeks.</p>
+        <a href="PlantCare.html" class="info-button">More Info</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-modern">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <img src="images/logo.jpg" alt="Florafy Logo" class="footer-logo">
+        <h3>Florafy</h3>    
+        <p class="tagline">Helping you and your plants grow 🌿</p>
+      </div>
+
+      <div class="footer-grid">
+        <div>
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="FirstPage.html">Home</a></li>
+            <li><a href="MyPlants.html">My Plants</a></li>
+            <li><a href="PlantCare.html">Learn More</a></li>
+            <li><a href="PlantCare.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="Contact.html">Help Center</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Florafy • Crafted with care 🌱</p>
+    </div>
+  </footer>
+  <script>
+    const water = document.getElementById('waterFill');
+    const light = document.getElementById('lightFill');
+    const soil = document.getElementById('soilFill');
+    const oxygen = document.getElementById('oxygenFill');
+    const emoji = document.getElementById('statusEmoji');
+    const image = document.getElementById('plantImage');
+    const warning = document.getElementById('warningMessage');
+
+    const decayRatesByPlant = {
+      "Cactus": { water: 0.2, light: 0.8, soil: 0.2, oxygen: 0.3 },
+      "Rose":   { water: 2.5, light: 1.5, soil: 1.2, oxygen: 0.5 },
+      "Fern":   { water: 2, light: 0.6, soil: 1, oxygen: 1.5 },
+      "Bonsai": { water: 1.5, light: 1.2, soil: 1, oxygen: 1 }
+    };
+
+    const plantImages = {
+      "Cactus": {
+        100: "images/goodcactus.jpg",
+        75: "images/okcactus.jpg",
+        50: "images/driedcactus.jpg",
+        25: "images/deadcactus.jpg"
+      },
+      "Rose": {
+        100: "images/goodrose.jpg",
+        75: "images/okrose.jpg",
+        50: "images/wiltingrose.jpg",
+        25: "images/deadrose.jpg"
+      },
+      "Fern": {
+        100: "images/goodfern.jpg",
+        75: "images/okfern.jpg",
+        50: "images/wiltiringfern.jpg",
+        25: "images/deadfern.jpg"
+      },
+      "Bonsai": {
+        100: "images/goodbonsai.jpg",
+        75: "images/okbonsai.jpg",
+        50: "images/wiltiringbonsai.jpg",
+        25: "images/deadbonsai.jpg"
+      }
+    };
+
+    let selectedPlant = localStorage.getItem('selectedPlant') || 'Cactus';
+    document.getElementById('plantType').value = selectedPlant;
+    let decayRates = decayRatesByPlant[selectedPlant];
+
+    const values = JSON.parse(localStorage.getItem('plantStatus')) || {
+      water: 100,
+      light: 100,
+      soil: 100,
+      oxygen: 100
+    };
+
+function selectPlant() {
+  selectedPlant = document.getElementById('plantType').value;
+  localStorage.setItem('selectedPlant', selectedPlant);
+  decayRates = decayRatesByPlant[selectedPlant];
+  values.water = 100;
+  values.light = 100;
+  values.soil = 100;
+  values.oxygen = 100;
+  updateBars(); 
+}
+
+
+    function getImageByHealth(avg) {
+      if (avg > 75) return plantImages[selectedPlant][100];
+      if (avg > 50) return plantImages[selectedPlant][75];
+      if (avg > 25) return plantImages[selectedPlant][50];
+      return plantImages[selectedPlant][25];
+    }
+
+    function updateBars() {
+      water.style.width = values.water + '%';
+      light.style.width = values.light + '%';
+      soil.style.width = values.soil + '%';
+      oxygen.style.width = values.oxygen + '%';
+
+      const avg = (values.water + values.light + values.soil + values.oxygen) / 4;
+
+      if (avg > 75) {
+        emoji.textContent = '😄';
+      } else if (avg > 50) {
+        emoji.textContent = '🙂';
+      } else if (avg > 25) {
+        emoji.textContent = '😐';
+      } else {
+        emoji.textContent = '😢';
+      }
+
+      image.src = getImageByHealth(avg);
+
+      let warnings = [];
+      for (let key in values) {
+        if (values[key] < 50) {
+          warnings.push(`${key.charAt(0).toUpperCase() + key.slice(1)} is low!`);
+        }
+      }
+
+      if (warnings.length > 0) {
+        warning.textContent = warnings.join(' ');
+        warning.style.display = 'block';
+      } else {
+        warning.textContent = '';
+        warning.style.display = 'none';
+      }
+
+      localStorage.setItem('plantStatus', JSON.stringify(values));
+    }
+
+    function decreaseValues() {
+      values.water = Math.max(0, values.water - decayRates.water);
+      values.light = Math.max(0, values.light - decayRates.light);
+      values.soil = Math.max(0, values.soil - decayRates.soil);
+      values.oxygen = Math.max(0, values.oxygen - decayRates.oxygen);
+      updateBars();
+    }
+
+    function refill(type) {
+      values[type] = 100;
+      updateBars();
+    }
+
+    setInterval(decreaseValues, 1000);
+    updateBars();
+
+    function updateTimer() {
+      const now = new Date();
+      document.getElementById('liveTimer').textContent = now.toLocaleTimeString();
+    }
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  </script>
+  </div>
+  </body>
+</html>
